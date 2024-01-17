@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -24,6 +25,8 @@ import android.widget.Toast;
 import com.example.myapplication.databinding.FragmentLoginBinding;
 
 import com.example.myapplication.R;
+
+import java.util.Objects;
 
 public class LoginFragment extends Fragment {
 
@@ -119,8 +122,10 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+               // loginViewModel.login(usernameEditText.getText().toString(),
+               //         passwordEditText.getText().toString());
+                // сделать проверку на логин и пароль
+                Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeFragment);
             }
         });
     }
