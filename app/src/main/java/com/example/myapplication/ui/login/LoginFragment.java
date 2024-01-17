@@ -125,7 +125,9 @@ public class LoginFragment extends Fragment {
                // loginViewModel.login(usernameEditText.getText().toString(),
                //         passwordEditText.getText().toString());
                 // сделать проверку на логин и пароль
-                Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeFragment);
+                Bundle bundle = new Bundle();
+                bundle.putString("param1","Hello from Login Fragment");
+                Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeFragment,bundle);
             }
         });
     }
